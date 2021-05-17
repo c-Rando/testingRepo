@@ -1,2 +1,4 @@
-# zacutoppe
-WEB BASED API TO GENERATE SEVERAL USER REQUESTED PROMPTS TO REMOTE TRAVEL APIS 
+# testing repository to upload js changes outside of current assignments
+
+
+snippets and chunks :P
