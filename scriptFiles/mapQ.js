@@ -1,5 +1,6 @@
-
 //*! LAT & LONGITUDE - Future enhancement
+console.log("Loaded mapQ.js");
+
 
 var MAPQ_API_KEY = "yQcB9Koy5KFxIcWM6GPCjCJ132aiYGhh";
 

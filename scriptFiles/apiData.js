@@ -1,7 +1,75 @@
-var apiKey = "653094733b20fc02dc6f1e6e6b8bf37e";
+console.log("Loaded apiData.js");
+
+
+// todo: Global Variables
+var phonenumber,
+    email,
+    activity,
+    fees,
+    lat,
+    lon = "";
+
+// Getting Answers from NPS Park API
+function getAnswer(e, pIndex) {
+    e.preventDefault();
+    var data = JSON.parse(sessionStorage.getItem(pIndex.toString()));
+    var contactP = data.contacts;
+    if (contactP != null && contactP.phoneNumbers.length > 0) {
+        phonenumber = contactP.phoneNumbers[0].phoneNumber;
+    }
+    // Check if we want keep email info
+    if (contactP != null && contactP.emailAddresses.length > 0) {
+        email = contactP.emailAddresses[0].emailAddresses;
+    }
+    activity = data.activities[0].name;
+    fees = data.entranceFees[0].cost;
+    lat = data.latitude;
+    lon = data.longitude;
+    $("#spanphoneNumber").text("");
+    $("#spanEmail").text("");
+    $("#spanActivity").text("");
+    $("#spanFees").text("");
+    $("#divInformation").hide();
+};
+
+// Fetching Data from NPS API
+function npsApiCall(parkNJ) {
+    var npsKey = "aKdQbl5YRDOdOcAzaiDfbacSBby5NQWEU8s5Mi5D";
+    var npsUrl = `https://developer.nps.gov/api/v1/parks?stateCode=${parkNJ}&api_key=${npsKey}`;
+    console.log("my park list: ", npsUrl);
+    $.ajax({
+        url: npsUrl,
+        success: function (response) {
+            console.log(response.data);
+            $("#myList").empty();
+            for (let i = 0; i < response.data.length; i++) {
+                var nameP = response.data[i].fullName;
+                var latP = response.data[i].latitude;
+                var longP = response.data[i].longitude;
+                sessionStorage.removeItem(i.toString());
+                sessionStorage.setItem(i.toString(), JSON.stringify(response.data[i]));
+                $("#myList").append(
+                    "<a class='dropdown-item' href='#' onclick='getAnswer(event," +
+                    i.toString() +
+                    ")'>" +
+                    nameP +
+                    "</a>"
+                );
+            }
+        },
+        error: function (xhr, status, error) {
+            console.log("status: ", status);
+            console.log("error: ", error);
+        },
+        complete: function (xhr, status) {
+            console.log("complete: ", status);
+        },
+    });
+};
 
 //*! Weather Information
 function getFiveDayWeatherApi(lat, lon) {
+    var apiKey = "653094733b20fc02dc6f1e6e6b8bf37e";
     var city = $("#city-name").val();
     console.log("current searched was: ", city);
     var fiveDayUrlApi = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&exclude=hourly,minutely,current,alerts&units=imperial&appid=${apiKey}`;

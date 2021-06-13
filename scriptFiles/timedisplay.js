@@ -1,5 +1,7 @@
 // todo: Global Variables
 var timeDispEl = $("#time-display");
+console.log("Loaded timedisplay.js");
+
 
 
 // *! COMPLETED time display function
