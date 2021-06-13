@@ -1,3 +1,5 @@
+var apiKey = "653094733b20fc02dc6f1e6e6b8bf37e";
+
 //*! Weather Information
 function getFiveDayWeatherApi(lat, lon) {
     var city = $("#city-name").val();
