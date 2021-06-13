@@ -1,58 +1,96 @@
+/*comments to ssatisfy a push*/
 body {
-    font-family:'PT Sans', sans-serif;
-    font-size: 16px;
-    line-height: 1;
-  }
+  font-family:'PT Sans', sans-serif;
+  font-size: 16px;
+  line-height: 1;
+  color:hsl (32,50%, 12%);
+ 
+}
+
+.card {
+  position: relative;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  min-width: 0;
+  word-wrap: break-word;
+  background-clip: border-box;
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  border-radius: 0.25rem;
+  box-shadow: 10px 10px 5px #aaaaaa;
+}
+
+
+.card-search{
+  border:#4bacb8;
+}
+
+
+
+.header {
+  text-align: left;
   
-  .card {
-    position: relative;
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-direction: column;
-    flex-direction: column;
-    min-width: 0;
-    word-wrap: break-word;
-    background-color: #fff;
-    background-clip: border-box;
-    border: 1px solid rgba(0, 0, 0, 0.125);
-    border-radius: 0.25rem;
-    box-shadow: 10px 10px 5px #aaaaaa;
-  }
-  .card-search{
-    border:#4bacb8;
-  }
+  color: rgb(4, 6, 10);
+  border-radius: 5;
+  border-bottom: 5px solid rgb(24, 23, 21);
   
-  .jumbotron {
-    text-align: center;
-    background-color:  #5b6f9b;
-    color: rgb(245, 241, 241);
-    border-radius: 2;
-    border-bottom: 2px solid rgb(63, 6, 219);
-    
-  }
+   
+}
+.header h1,h4  {
+text-shadow: 2px 2px #151418;
+color: rgb(187, 209, 240);
+}
+
+.dark{
+background-color:#2f3d41;
+color:blanchedalmond;
+
+}
+
+.bgimage {
+  max-height:600 ;
   
-  .jumbotron-weather {
-    background-image: url(../img/AC3.jpg);
+  background: url(../img/DelGApHero3.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size:cover;
+  background-attachment: fixed;
+  
+
+}
+.bgimage h5 {
+  
+  text-shadow:2px 2px #333;
+}
+
+.main{
+  background-image:url(../img/DelGapHero1.jpg) ;
+  max-width: 100%;
+  max-height: fit-content;
+  background-size: cover;
+}
+.container2{
+  margin-top: 50px;
+}
+
+.hide{
+  display:none;
+}
+.show{
+  
+}
+/* Extra small devices (phones, less than 768px) */
+/* No media query since this is the default in Bootstrap */
+/* Small devices (tablets, 768px and up) */
+
+@media (min-width: 768px) {
+  .col-md {
+    -ms-flex-preferred-size: 0;
+    flex-basis: 0;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
     max-width: 100%;
-    background-size: cover;
-    
   }
   
-  .jumbotron-parkout{
-    background-image: url();
-  }
-  
-  /*
-  .jumbotron-parkout {
-    background-image:url(https://www.nps.gov/common/uploads/grid_builder/greg/crop16_9/4EC37E28-1DD8-B71B-0B553480E6AACBF8.jpg?width=950&quality=90&mode=crop");
-    text-align: left;
-    object-fit: cover;
-    background-color:  #5b6f9b;
-    color: rgb(245, 241, 241);
-    
-  
-  }  */
-  
-  
-  
-  
+}
