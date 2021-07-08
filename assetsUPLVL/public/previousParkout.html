@@ -1,37 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta
+      name="Description"
+      content="App that pools up to date data on National Parks in New Jersey"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
+    />
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <meta name="Description" content="App that pools up to date data on National Parks in New Jersey" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+    <link rel="stylesheet" href="./assets/css/scafStyle.css" />
+    <title>Park Out</title>
+  </head>
 
-
-  <link rel="stylesheet" href="./assetsUPLVL/assets/styleFiles/style.css">
-  <title>Park Out</title>
-</head>
-
-<body>
-  <main id="container0" class="flex">
-    <header class="header">
-      <!-- Background image -->
-      <div class="p-5  header"
-        style="background-image: url('./assetsUPLVL/assets/img/DelGapHeader2.png');height: 100vh; background-size: cover;">
-        <div>
-          <div class="d-flex justify-content-left align-items-center h-100">
-            <div>
-              <a id="home"  href="index.html">GO Home Here</a>
-              <h1 class="mb-3">Park Out</h1>
-              <h4 class="mb-3">The place to check out before you head out!</h4>
-            </div>
-          </div><!-- Background image    Ends permanet section-->
-
-          <section id="container2" class="container row">
+  <body>
+    <main id="container0" class="flex">
+      <header class="header">
+        <!-- Background image -->
+        <div
+          class="p-5 header"
+          style="
+            background-image: url('./assets/img/Delgap1.jpg');
+            height: 100vh;
+            background-size: cover;">
+          <!--park out original-->
+          <section id="where2-go" class="container row">
             <div class="col-md-4"></div>
             <div class="card col-md-6">
+              <a href="#home"  class="btn btn-escape mb-1">exit</a>
 
               <h2>Where would you like to go?</h2>
               <p>
@@ -52,9 +56,10 @@
 
   
                <!--Check Box   user choice-->
-          <section id="container3" class="col-md-6">
+          <section id="park-info-requests" class="col-md-6">
           <div class="card">
             <div class="card-body">
+              <a href="#home" class="btn btn-escape mb-1">exit</a>
               <fieldset class="group" onsubmit="return onSubmitData(event)">
                 <legend>What information can we help you with?</legend>
                 <ul class="checkbox">
@@ -84,8 +89,9 @@
           </section>
 
                 <!--     container for Park Info -->
-          <section id="divInformation" class="container">
+          <section id="weather-info" class="container">
             <div class="row card col-md-6 dark">
+              <a href="#home" class="btn btn-escape mb-1">exit</a>
               <span id="spancontact" style="display: none;">Phone Number :- <span id="spanphoneNumber"></span>
                 <br>
                 Email :- <span id="spanEmail"></span>
@@ -104,21 +110,21 @@
               </div>
             </div>
           </section>
+            <!--container for maps-->
+          <section id = "maps" class="container text-right planner-div">
+            <div class="col-md-2"></div>
+            <div class="card col-md-8">
+                  <a href="#home" class="btn btn-escape mb-1">exit</a>
+                  <h1 class="display-4">Place for MAPS to go </h1>
+            </div>
+          </section>
         </div>
-      </div>
-    </header>
-
- 
-
-
-
-
-  </main>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.js"></script>
-  <script src="./assetsUPLVL/assets/scriptFiles/logic.js"></script>
-</body>
-
-</html> <!-- -->
+      </header>
+    </main>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.js"></script>
+  </body>
+</html>
+<!-- -->
